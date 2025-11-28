@@ -1,0 +1,20 @@
+# Old incorrect MongoDB version (ignore these folders)
+backend/
+frontend/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local

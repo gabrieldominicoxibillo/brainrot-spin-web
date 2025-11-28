@@ -1,0 +1,31 @@
+===============================================
+   BRAINROT SPIN - WEB ADMIN PANEL
+===============================================
+
+HOW TO USE:
+===========
+
+1. Open "admin-web.html" in your browser
+   (Just double-click it!)
+
+2. Login with password: admin123
+
+3. Done! Manage your game!
+
+===============================================
+
+IMPORTANT:
+- Don't open "index.html" (that's old)
+- Open "admin-web.html" instead!
+
+===============================================
+
+TO DEPLOY TO CLOUDFLARE:
+========================
+
+1. Push to GitHub
+2. Go to pages.cloudflare.com
+3. Connect your repo
+4. Deploy!
+
+===============================================

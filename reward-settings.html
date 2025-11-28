@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reward Settings - Brainrot Spin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Arial', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen p-6">
+  <div class="max-w-4xl mx-auto">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h1 class="text-4xl font-bold text-white mb-2">
+          ⚙️ REWARD SETTINGS
+        </h1>
+        <p class="text-gray-200">Configure reward values for your game</p>
+      </div>
+      <button onclick="if(window.parent && window.parent.closeRewardSettingsModal) window.parent.closeRewardSettingsModal()" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-lg transition-all">
+        ← Back
+      </button>
+    </div>
+
+    <!-- Bet Milestone Rewards -->
+    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 mb-6 border-2 border-white border-opacity-20">
+      <h2 class="text-2xl font-bold text-white mb-4">🎯 Bet Milestone Rewards</h2>
+      <p class="text-gray-200 text-sm mb-4">Rewards given when players reach certain bet counts</p>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="text-white text-sm mb-1 block">20 Bets Reward</label>
+          <input type="number" id="milestone-20" value="3" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div>
+          <label class="text-white text-sm mb-1 block">50 Bets Reward</label>
+          <input type="number" id="milestone-50" value="8" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div>
+          <label class="text-white text-sm mb-1 block">100 Bets Reward</label>
+          <input type="number" id="milestone-100" value="20" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div>
+          <label class="text-white text-sm mb-1 block">250 Bets Reward</label>
+          <input type="number" id="milestone-250" value="50" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div>
+          <label class="text-white text-sm mb-1 block">500 Bets Reward</label>
+          <input type="number" id="milestone-500" value="120" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div>
+          <label class="text-white text-sm mb-1 block">1000 Bets Reward</label>
+          <input type="number" id="milestone-1000" value="300" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+      </div>
+    </div>
+
+    <!-- Daily Attendance -->
+    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 mb-6 border-2 border-white border-opacity-20">
+      <h2 class="text-2xl font-bold text-white mb-4">📅 Daily Attendance Rewards</h2>
+      <p class="text-gray-200 text-sm mb-4">Rewards for logging in daily and maintaining streaks</p>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="text-white text-sm mb-1 block">Daily Login Bonus</label>
+          <input type="number" id="daily-login" value="1" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div>
+          <label class="text-white text-sm mb-1 block">7-Day Streak Bonus</label>
+          <input type="number" id="streak-7" value="5" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div>
+          <label class="text-white text-sm mb-1 block">14-Day Streak Bonus</label>
+          <input type="number" id="streak-14" value="10" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div>
+          <label class="text-white text-sm mb-1 block">30-Day Streak Bonus</label>
+          <input type="number" id="streak-30" value="20" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+      </div>
+    </div>
+
+    <!-- Monthly Achievements -->
+    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 mb-6 border-2 border-white border-opacity-20">
+      <h2 class="text-2xl font-bold text-white mb-4">🏆 Monthly Achievement Rewards</h2>
+      <p class="text-gray-200 text-sm mb-4">Rewards for monthly activity combinations</p>
+
+      <div class="space-y-4">
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+          <p class="text-white font-bold mb-2">Active Player (100 bets + 15 days)</p>
+          <input type="number" id="monthly-active" value="15" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+          <p class="text-white font-bold mb-2">Dedicated Player (250 bets + 20 days)</p>
+          <input type="number" id="monthly-dedicated" value="40" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+          <p class="text-white font-bold mb-2">Super Player (500 bets + 25 days)</p>
+          <input type="number" id="monthly-super" value="100" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <button onclick="saveSettings()" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 rounded-lg transition-all text-lg">
+      💾 Save Reward Settings
+    </button>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="reward-settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Win Chances Settings - Brainrot Spin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Arial', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen p-6">
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h1 class="text-4xl font-bold text-white mb-2">
+          🎲 WIN CHANCES SETTINGS
+        </h1>
+        <p class="text-gray-200">Configure win probabilities for each brainrot box</p>
+      </div>
+      <button onclick="if(window.parent && window.parent.closeWinChancesModal) window.parent.closeWinChancesModal()" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-lg transition-all">
+        ← Back
+      </button>
+    </div>
+
+    <!-- Mode Selection -->
+    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 mb-6 border-2 border-white border-opacity-20">
+      <h2 class="text-2xl font-bold text-white mb-4">Mode</h2>
+      <div class="flex gap-4">
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="radio" name="mode" value="equal" id="mode-equal" checked class="w-5 h-5">
+          <span class="text-white">Equal Probability (Fair - Each box has equal 5% chance)</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="radio" name="mode" value="weighted" id="mode-weighted" class="w-5 h-5">
+          <span class="text-white">Weighted Probability (Custom weights per box)</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Weighted Probabilities (hidden by default) -->
+    <div id="weighted-section" class="hidden bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 mb-6 border-2 border-white border-opacity-20">
+      <h2 class="text-2xl font-bold text-white mb-4">Custom Weights</h2>
+      <p class="text-gray-200 text-sm mb-4">Higher multiplier boxes can have lower weights. Total must equal 100%.</p>
+
+      <div class="grid grid-cols-4 gap-4" id="brainrot-weights">
+        <!-- Will be populated by JavaScript -->
+      </div>
+
+      <div class="mt-4 p-4 bg-yellow-500 bg-opacity-20 rounded-lg">
+        <p class="text-white font-bold">Total Weight: <span id="total-weight">0</span>%</p>
+        <p class="text-gray-200 text-sm">Must equal 100% to save</p>
+      </div>
+    </div>
+
+    <!-- Rampage Mode Settings -->
+    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 mb-6 border-2 border-white border-opacity-20">
+      <h2 class="text-2xl font-bold text-white mb-4">⚡ Rampage Mode</h2>
+      <p class="text-gray-200 text-sm mb-4">Configure the bonus rampage mode trigger chance</p>
+
+      <div>
+        <label class="text-white text-sm mb-1 block">Rampage Trigger Chance (%)</label>
+        <input type="number" id="rampage-chance" value="20" min="0" max="100" class="w-full bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        <p class="text-gray-300 text-xs mt-1">Current: 20% chance to trigger rampage bonus spins</p>
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <button onclick="saveSettings()" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 rounded-lg transition-all text-lg">
+      💾 Save Win Chances Settings
+    </button>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="brainrots-config.js"></script>
+  <script src="win-chances-settings.js"></script>
+</body>
+</html>
